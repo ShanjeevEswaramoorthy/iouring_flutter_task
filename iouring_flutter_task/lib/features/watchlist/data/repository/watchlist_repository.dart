@@ -1,5 +1,5 @@
 import 'package:iouring_flutter_task/core/mock_data.dart';
-import 'package:iouring_flutter_task/features/watchlist/model/watchlist_model.dart';
+import 'package:iouring_flutter_task/features/watchlist/data/model/watchlist_model.dart';
 
 class WatchlistRepository {
   List<WatchlistGroup> fetchAllWatchlists() {

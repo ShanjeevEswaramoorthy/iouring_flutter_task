@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iouring_flutter_task/features/watchlist/view/screens/watchlist_screen.dart';
+import 'package:iouring_flutter_task/features/watchlist/presentation/views/watchlist_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

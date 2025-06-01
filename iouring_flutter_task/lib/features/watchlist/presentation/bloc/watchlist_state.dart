@@ -1,4 +1,4 @@
-import 'package:iouring_flutter_task/features/watchlist/model/watchlist_model.dart';
+import 'package:iouring_flutter_task/features/watchlist/data/model/watchlist_model.dart';
 
 abstract class WatchlistState {}
 

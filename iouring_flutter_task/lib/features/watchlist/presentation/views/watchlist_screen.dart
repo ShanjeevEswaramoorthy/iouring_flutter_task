@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iouring_flutter_task/features/watchlist/bloc/watchlist_bloc.dart';
-import 'package:iouring_flutter_task/features/watchlist/bloc/watchlist_event.dart';
-import 'package:iouring_flutter_task/features/watchlist/bloc/watchlist_state.dart';
-import 'package:iouring_flutter_task/features/watchlist/view/screens/search_screen.dart';
+import 'package:iouring_flutter_task/features/watchlist/presentation/bloc/watchlist_bloc.dart';
+import 'package:iouring_flutter_task/features/watchlist/presentation/bloc/watchlist_event.dart';
+import 'package:iouring_flutter_task/features/watchlist/presentation/bloc/watchlist_state.dart';
+import 'package:iouring_flutter_task/features/watchlist/presentation/views/search_screen.dart';
 
 class WatchlistScreen extends StatelessWidget {
   const WatchlistScreen({super.key});

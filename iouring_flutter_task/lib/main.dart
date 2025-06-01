@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:iouring_flutter_task/features/watchlist/repository/watchlist_repository.dart';
-import 'package:iouring_flutter_task/features/watchlist/bloc/watchlist_bloc.dart';
-import 'package:iouring_flutter_task/features/watchlist/view/screens/home_screen.dart';
+import 'package:iouring_flutter_task/features/watchlist/data/repository/watchlist_repository.dart';
+import 'package:iouring_flutter_task/features/watchlist/presentation/bloc/watchlist_bloc.dart';
+import 'package:iouring_flutter_task/features/watchlist/presentation/views/home_screen.dart';
 
 void main() {
   runApp(

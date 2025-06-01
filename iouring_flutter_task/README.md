@@ -1,16 +1,26 @@
 # iouring_flutter_task
 
-A new Flutter project.
+A cross-platform Flutter app that simulates a stock watchlist system using **BLoC** state management and **Clean Architecture** principles. This project demonstrates the separation of concerns, modular design, and state management using mock data
 
 ## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Bottom Navigation Bar** with 3 tabs:
+  - Watchlist
+  - Properties (placeholder)
+  - Analytics (placeholder)
 
-A few resources to get you started if this is your first Flutter project:
+- **Watchlist Screen**:
+  - Tab bar to switch between multiple **watchlist groups**
+  - Clickable **search bar** that navigates to a dummy search screen
+  - Displays a **list of stock symbols** for the selected group
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Uses **mock data** to simulate backend responses
+- Built with **Flutter**, **BLoC**, and **Clean Architecture**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+##  Architecture
+
+The app follows **Clean Architecture**:
+

@@ -19,10 +19,17 @@ class WatchlistBloc extends Bloc<WatchlistEvent, WatchlistState> {
     Emitter<WatchlistState> emit,
   ) async {
     emit(WatchlistLoading());
-    _watchlists = repository.fetchAllWatchlists();
-    emit(
-      WatchlistLoaded(allGroups: _watchlists, selectedGroup: _watchlists.first),
-    );
+    try {
+      _watchlists = repository.fetchAllWatchlists();
+      emit(
+        WatchlistLoaded(
+          allGroups: _watchlists,
+          selectedGroup: _watchlists.first,
+        ),
+      );
+    } catch (e) {
+      emit(WatchlistError(message: 'Failed to load watchlists: $e'));
+    }
   }
 
   void _onSelectGroup(
@@ -30,9 +37,11 @@ class WatchlistBloc extends Bloc<WatchlistEvent, WatchlistState> {
     Emitter<WatchlistState> emit,
   ) {
     emit(WatchlistLoading());
-    final selected = _watchlists.firstWhere(
-      (element) => element.groupName == _watchlists[event.index ?? 0].groupName,
-    );
-    emit(WatchlistLoaded(allGroups: _watchlists, selectedGroup: selected));
+    try {
+      final selected = _watchlists[event.index ?? 0];
+      emit(WatchlistLoaded(allGroups: _watchlists, selectedGroup: selected));
+    } catch (e) {
+      emit(WatchlistError(message: 'Failed to select watchlist group: $e'));
+    }
   }
 }

@@ -10,10 +10,11 @@ class WatchlistScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<WatchlistBloc>().add(LoadWatchlists());
-
     return BlocBuilder<WatchlistBloc, WatchlistState>(
       builder: (context, watchlistState) {
+        if (watchlistState is WatchlistInitial) {
+          context.read<WatchlistBloc>().add(LoadWatchlists());
+        }
         if (watchlistState is WatchlistLoading) {
           return const Center(
             child: CircularProgressIndicator(color: Colors.green),
@@ -186,8 +187,27 @@ class WatchlistScreen extends StatelessWidget {
               ),
             ),
           );
+        } else {
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Error Occurs ${watchlistState is WatchlistError ? watchlistState.message : ''}',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: Colors.red),
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    context.read<WatchlistBloc>().add(LoadWatchlists());
+                  },
+                  child: const Text('Retry'),
+                ),
+              ],
+            ),
+          );
         }
-        return SizedBox();
       },
     );
   }

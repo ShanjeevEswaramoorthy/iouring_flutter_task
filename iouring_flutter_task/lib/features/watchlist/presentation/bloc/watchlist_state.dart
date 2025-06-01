@@ -12,3 +12,8 @@ class WatchlistLoaded extends WatchlistState {
 
   WatchlistLoaded({required this.allGroups, required this.selectedGroup});
 }
+
+class WatchlistError extends WatchlistState {
+  final String message;
+  WatchlistError({required this.message});
+}
